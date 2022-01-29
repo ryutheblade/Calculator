@@ -51,6 +51,9 @@ flips.forEach(flip => {
             display2.innerText = dis2Num;
         }else if(e.target.innerText === '-' && isNegative) {
             isNegative = false;
+            tempString = display2.innerText;
+            dis2Num = tempString.replace('-', '');
+            display2.innerText = dis2Num;
         }
     })
 })
@@ -97,7 +100,7 @@ clear.addEventListener('click', (e) => {
     result.innerText = '';
 })
 
-window.addEventListener('keydown', (e) => {
+window.addEventListener('keyup', (e) => {
     if(
         e.key === '0'||
         e.key === '1'||
