@@ -45,11 +45,11 @@ operators.forEach(operator => {
 
 flips.forEach(flip => {
     flip.addEventListener('click', (e) => {
-        if(e.target.innerText !== '-' && !isNegative){
+        if(display2.innerText !== '-' && !isNegative){
             isNegative = true;
             dis2Num = '-' + display2.innerText;
             display2.innerText = dis2Num;
-        }else if(e.target.innerText === '-' && isNegative) {
+        }else{
             isNegative = false;
             tempString = display2.innerText;
             dis2Num = tempString.replace('-', '');
