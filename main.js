@@ -7,9 +7,6 @@ const equal = document.querySelector('.equal');
 const clear = document.querySelector('.clear');
 const flips = document.querySelectorAll('.flip')
 
-window.addEventListener('load', ()=> {
-    clearVar()
-})
 
 let dis1Num = '';
 let dis2Num = '';
@@ -99,7 +96,7 @@ clear.addEventListener('click', (e) => {
     display2.innerText = '0';
     dis1Num = '';
     dis2Num = '';
-    results = '0';
+    results = '';
     result.innerText = '';
 })
 
