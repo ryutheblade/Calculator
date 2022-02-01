@@ -39,7 +39,6 @@ operators.forEach(operator => {
         }
         clearVar(operatorName);
         lastOperation = operatorName;
-        console.log(results);
     })
 })
 
