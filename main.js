@@ -7,6 +7,10 @@ const equal = document.querySelector('.equal');
 const clear = document.querySelector('.clear');
 const flips = document.querySelectorAll('.flip')
 
+window.addEventListener('load', ()=> {
+    clearVar()
+})
+
 let dis1Num = '';
 let dis2Num = '';
 let results = null;
