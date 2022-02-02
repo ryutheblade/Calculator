@@ -13,7 +13,6 @@ let dis2Num = '';
 let results = null;
 let lastOperation = '';
 let haveDecimal = false;
-let isNegative = false;
 
 
 numbers.forEach(num => {
@@ -30,7 +29,9 @@ numbers.forEach(num => {
 
 operators.forEach(operator => {
     operator.addEventListener('click', (e)=> {
-        if(!dis2Num) result;
+        if(!dis2Num) {
+            alert('You must enter a number before performing an operation, please press the "AC" button and try again.');
+        };
         haveDecimal = false;
         const operatorName = e.target.innerText;
         if(dis1Num && dis2Num && lastOperation) {
@@ -45,14 +46,12 @@ operators.forEach(operator => {
 
 flips.forEach(flip => {
     flip.addEventListener('click', (e) => {
-        if(display2.innerText !== '-' && !isNegative){
-            isNegative = true;
-            dis2Num = '-' + display2.innerText;
-            display2.innerText = dis2Num;
-        }else{
-            isNegative = false;
+        if(display2.innerText.includes('-')){
             tempString = display2.innerText;
             dis2Num = tempString.replace('-', '');
+            display2.innerText = dis2Num;
+        }else{
+            dis2Num = '-' + display2.innerText;
             display2.innerText = dis2Num;
         }
     })
@@ -81,7 +80,9 @@ function mathOperation() {
 }
 
 equal.addEventListener('click', (e) => {
-    if(!dis1Num || !dis2Num) result;
+    if(!dis1Num) {
+        alert('You must perform an operation before pressing the equal button, please press the "AC" button and try again.');
+    } 
     haveDecimal = false;
     mathOperation();
     clearVar();
